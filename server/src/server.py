@@ -1,11 +1,16 @@
 import os
 from flask import Flask
+import sys
+sys.path.append('../libs')
+import decisiontree
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
-    return "hi!"
+def getDecisionTree():
+    x = decisiontree.DecisionTree()    #create a new instance of our decisiontree.py class
+    myclf = x.createDecisionTreeModel()
+    return str(myclf)    #return a string representation of the model
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
