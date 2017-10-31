@@ -12,6 +12,12 @@ def getDecisionTree():
     myclf = x.createDecisionTreeModel()
     return str(myclf)    #return a string representation of the model
 
+@app.route("/test")
+def test():
+    print("test")
+    return "test"
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
