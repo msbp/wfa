@@ -1,5 +1,5 @@
 Flask==0.12.2
-numpy==1.9.2
+numpy
 py2app==0.7.3
 pyparsing==2.0.1
 python-dateutil==1.5
