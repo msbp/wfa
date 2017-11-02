@@ -13,7 +13,7 @@ class DecisionTree:
         return clf
     
     def __init__(self):
-        print "ok"        
+        print("ok")        
 
 
 
