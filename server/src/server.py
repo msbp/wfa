@@ -6,11 +6,7 @@ import decisiontree
 
 app = Flask(__name__)
 
-@app.route("/")
-def getDecisionTree():
-    x = decisiontree.DecisionTree()    #create a new instance of our decisiontree.py class
-    myclf = x.createDecisionTreeModel()
-    return str(myclf)    #return a string representation of the model
+
 
 @app.route("/test")
 def test():
