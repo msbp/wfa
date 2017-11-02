@@ -2,7 +2,7 @@ import os
 from flask import Flask
 import sys
 sys.path.append('../libs')
-
+import decisiontree
 
 app = Flask(__name__)
 
@@ -11,6 +11,13 @@ app = Flask(__name__)
 @app.route("/")
 def test():
     return "test"
+
+@app.route("/tree")
+def tree():
+    x = decisiontree.DecisionTree()
+    mytree = x.createDecisionTreeModel()
+    
+    return str(mytree)
 
 
 if __name__ == "__main__":
