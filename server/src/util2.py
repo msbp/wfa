@@ -61,4 +61,4 @@ if __name__ == '__main__':
     cvt = Arff2Skl('weather.arff')
     X, y = cvt.transform()
     D, l = cvt.inverse_transform(X, y)
-    print D, l
+    print(D, l)
