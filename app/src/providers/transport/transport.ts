@@ -18,8 +18,9 @@ export class TransportProvider {
   get() {
 
     console.log("Making get request!")
-    this.http.get('http://ionic.io', {}, {}).then(data => {
+    this.http.get('https://wfa-server.herokuapp.com', {}, {}).then(data => {
         console.log("success: " + data.status)
+        console.log("here is the data: " + data.data)
 
 
 

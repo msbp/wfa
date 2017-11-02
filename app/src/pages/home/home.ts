@@ -1,36 +1,34 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
- 
-const google = null;
- 
+
+import {TransportProvider} from '../../providers/transport/transport'
+  
 @Component({
   selector: 'home-page',
-  templateUrl: 'home.html'
-})
+  templateUrl: 'home.html',
+  providers: [TransportProvider]
+  })
+
+
+
+
+
+
 export class HomePage {
- 
-  @ViewChild('map') mapElement: ElementRef;
-  map: any;
- 
-  constructor(public navCtrl: NavController) {
- 
+
+  constructor(private transport: TransportProvider) {
   }
- 
+
+
   ionViewDidLoad(){
-    this.loadMap();
+        console.log("page loaded")              
   }
+
  
-  loadMap(){
- 
-    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
- 
-    let mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
- 
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
- 
+  sampleHttpRequest(){ 
+        console.log("ok");  
+
+        this.transport.get()  
+  
   }
 }

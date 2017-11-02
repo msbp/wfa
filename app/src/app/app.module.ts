@@ -10,7 +10,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {GoogleMaps} from '@ionic-native/google-maps';
+import {HTTP} from '@ionic-native/http';
+import { TransportProvider } from '../providers/transport/transport';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,9 @@ import {GoogleMaps} from '@ionic-native/google-maps';
   providers: [
     StatusBar,
     SplashScreen,
-    GoogleMaps,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    HTTP,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TransportProvider
   ]
 })
 export class AppModule {}
