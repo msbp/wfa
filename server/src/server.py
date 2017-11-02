@@ -8,9 +8,8 @@ app = Flask(__name__)
 
 
 
-@app.route("/test")
+@app.route("/")
 def test():
-    print("test")
     return "test"
 
 

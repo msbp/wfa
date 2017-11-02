@@ -1,2 +1,2 @@
-web: python dealscraper/server/src/server.py
+web: python server/src/server.py
 
