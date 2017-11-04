@@ -5,7 +5,7 @@ from sklearn import tree
 class DecisionTree: 
 
     def createDecisionTreeModel(self):
-        cvt = Arff2Skl('..//contact-lenses.arff')  
+        cvt = Arff2Skl('..\\contact-lenses.arff')  
         label = cvt.meta.names()[-1]
         X, y = cvt.transform(label)
         clf = tree.DecisionTreeClassifier(criterion = 'entropy')
