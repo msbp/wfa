@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 import sys
-sys.path.append('/libs/decisiontreeExample')
+sys.path.append('/app/server/libs/decisiontreeExample/')
 import decisiontree
 
 app = Flask(__name__)
