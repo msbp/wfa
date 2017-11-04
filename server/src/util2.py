@@ -10,7 +10,7 @@ from sklearn.feature_extraction import DictVectorizer
 class Arff2Skl():
 
     def __init__(self, fname):
-        assert(os.path.exists(fname))
+
         self._data, self._meta = loadarff(fname)
         self._t = {'X': DictVectorizer(sparse=False),
                    'y': DictVectorizer(sparse=False)}
