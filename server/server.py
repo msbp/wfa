@@ -20,6 +20,7 @@ def tree():
 @app.route("/examplePost", methods=['POST'])
 def postExample():
     json = request.get_json(force=True)
+    console.log("request: " + request)
     return str(json['example'])
 
 
