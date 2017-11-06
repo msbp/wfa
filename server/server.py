@@ -19,7 +19,6 @@ def tree():
 
 @app.route("/examplePost", methods=['POST'])
 def postExample():
-    print("request: "  + str(request))
     json = request.get_json(force=True)
     return str(json['example'])
 
