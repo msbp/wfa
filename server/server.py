@@ -1,8 +1,8 @@
 import os
-from flask import Flask
+from flask import Flask, request
 import sys
 sys.path.append('/app/server/libs/decisiontreeExample/')
-import decisiontree
+#import decisiontree
 
 app = Flask(__name__)
 
@@ -16,6 +16,12 @@ def tree():
     mytree = x.createDecisionTreeModel()
     
     return str(mytree)
+
+@app.route("/examplePost", methods=['POST'])
+def postExample():
+    json = request.get_json(force=True)
+    return str(json['example'])
+
 
 
 if __name__ == "__main__":
