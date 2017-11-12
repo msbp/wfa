@@ -12,6 +12,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HTTP} from '@ionic-native/http';
 import { TransportProvider } from '../providers/transport/transport';
+import {Geolocation} from '@ionic-native/geolocation';
+import {
+ GoogleMaps,
+ GoogleMap,
+ GoogleMapsEvent,
+ GoogleMapOptions,
+ CameraPosition,
+ MarkerOptions,
+ Marker
+ } from '@ionic-native/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +48,8 @@ import { TransportProvider } from '../providers/transport/transport';
     StatusBar,
     SplashScreen,
     HTTP,
+    Geolocation,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TransportProvider
   ]

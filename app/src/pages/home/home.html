@@ -1,58 +1,60 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Prediction</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Predict the location of wildfires!</h2>
+  <ion-list no-lines>
 
-  <ion-list>
+          <ion-item>
+            <ion-label fixed>Latitude</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
 
-  <ion-item>
-    <ion-label fixed>Latitude</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label fixed>Longitude</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+          <ion-item>
+            <ion-label fixed>Longitude</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
 
-  <ion-item>
-    <ion-label fixed>Radius</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+          <ion-item>
+            <ion-label fixed>Radius</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
 
-  <ion-item>
-    <ion-label>Date</ion-label>
-    <ion-select [(ngModel)]="year" cancelText="cancel" okText="Ok">
-      <ion-option value="bacon" selected="true">2017</ion-option>
-      <ion-option value="olives">2018</ion-option>
-      <ion-option value="xcheese" selected="true">2019</ion-option>
-      <ion-option value="peppers">Green Peppers</ion-option>
-      <ion-option value="mushrooms">Mushrooms</ion-option>
-      <ion-option value="onions">Onions</ion-option>
-      <ion-option value="pepperoni">Pepperoni</ion-option>
-      <ion-option value="pineapple">Pineapple</ion-option>
-      <ion-option value="sausage">Sausage</ion-option>
-      <ion-option value="Spinach">Spinach</ion-option>
-    </ion-select>
-    <ion-select [(ngModel)]="month" cancelText="Nah" okText="Okay!">
-      <ion-option value="bacon" selected="true">Bacon</ion-option>
-      <ion-option value="olives">Black Olives</ion-option>
-      <ion-option value="xcheese" selected="true">Extra Cheese</ion-option>
-      <ion-option value="peppers">Green Peppers</ion-option>
-      <ion-option value="mushrooms">Mushrooms</ion-option>
-      <ion-option value="onions">Onions</ion-option>
-      <ion-option value="pepperoni">Pepperoni</ion-option>
-      <ion-option value="pineapple">Pineapple</ion-option>
-      <ion-option value="sausage">Sausage</ion-option>
-      <ion-option value="Spinach">Spinach</ion-option>
-    </ion-select>
-  </ion-item>
+          <ion-item>
+            <ion-label>Date</ion-label>
+            <ion-select [(ngModel)]="year" cancelText="cancel" okText="Ok">
+              <ion-option value="bacon" selected="true">2017</ion-option>
+              <ion-option value="olives">2018</ion-option>
+              <ion-option value="xcheese" selected="true">2019</ion-option>
+              <ion-option value="peppers">Green Peppers</ion-option>
+              <ion-option value="mushrooms">Mushrooms</ion-option>
+              <ion-option value="onions">Onions</ion-option>
+              <ion-option value="pepperoni">Pepperoni</ion-option>
+              <ion-option value="pineapple">Pineapple</ion-option>
+              <ion-option value="sausage">Sausage</ion-option>
+              <ion-option value="Spinach">Spinach</ion-option>
+            </ion-select>
+            <ion-select [(ngModel)]="month" cancelText="Nah" okText="Okay!">
+              <ion-option value="bacon" selected="true">Bacon</ion-option>
+              <ion-option value="olives">Black Olives</ion-option>
+              <ion-option value="xcheese" selected="true">Extra Cheese</ion-option>
+              <ion-option value="peppers">Green Peppers</ion-option>
+              <ion-option value="mushrooms">Mushrooms</ion-option>
+              <ion-option value="onions">Onions</ion-option>
+              <ion-option value="pepperoni">Pepperoni</ion-option>
+              <ion-option value="pineapple">Pineapple</ion-option>
+              <ion-option value="sausage">Sausage</ion-option>
+              <ion-option value="Spinach">Spinach</ion-option>
+            </ion-select>
+          </ion-item>
 
   </ion-list> 
-  
+ 
+  <ion-content padding>
+         <div #map id="map"></div>
+         <button ion-button full color="dark" (click)="sampleHttpRequest()"> PREDICT </button>
+  </ion-content>
 
-  <button ion-button color="secondary" (click)="sampleHttpRequest()"> HTTP GET </button>

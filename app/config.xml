@@ -91,4 +91,7 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <allow-navigation href="http://134.87.148.176:8101" />
+    <allow-navigation href="http://134.87.150.212:8100" />
+    <allow-navigation href="http://192.168.1.84:8100" />
+    <allow-navigation href="http://192.168.0.27:8100" />
 </widget>
