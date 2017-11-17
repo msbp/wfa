@@ -8,7 +8,7 @@
 
 ##Demo##
 
-<img src="PredictionPage.png?raw=true" width="250" height="350">
+<img src="PredictionPage.png?raw=true" width="230" height="350">
 
 
 
