@@ -8,7 +8,7 @@
 
 ##Demo
 
-<img src="https://github.com/favicon.ico" width="48" height="60">
+<img src="PredictionPage.png?raw=true" width="60" height="100">
 
 
 
