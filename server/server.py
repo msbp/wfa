@@ -17,7 +17,7 @@ def tree():
     
     return str(mytree)
 
-@app.route("/examplePost", methods=['POST', 'OPTIONS'])
+@app.route("/examplePost", methods=['POST'])
 def postExample():
     json = request.get_json(force=True)
     return str(json['example'])
