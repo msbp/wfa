@@ -5,3 +5,4 @@ pyparsing==2.0.1
 python-dateutil==1.5
 scikit-learn==0.19.1
 scipy
+flask-cors-3.0.3
