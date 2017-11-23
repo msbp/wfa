@@ -22,6 +22,7 @@ import {
  MarkerOptions,
  Marker
  } from '@ionic-native/google-maps';
+import { HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
