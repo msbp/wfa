@@ -56,11 +56,20 @@ export class HomePage {
  
   sampleHttpRequest(){ 
 
-    //         this.transport.get('tree').then((data => {
-    //          console.log("here is the model: " + data)
-    //  }));
+            this.transport.get('tree').then((data )=> {
+              console.log("here is the model: " + data)
+           },
+             (error)=>{
+               console.log("Error occur: "+ error);
+      })
 
-          this.transport.post('examplePost')
-  
+          this.transport.post('examplePost').then((data)=>{
+              console.log("here is the post: "+data)
+          },
+          (error)=>{
+            console.log("Error occurs: "+error);
+
+          }
+        )
   }
 }

@@ -15,9 +15,17 @@ BASE_URL = "https://wfa-server.herokuapp.com/"
     }
 
   get(endpoint: string) {
+
+           let headers = new Headers({
+          'Content-Type': "application/json"
+            });
+            let options = new RequestOptions({
+            headers: headers
+            });
+
             return new Promise((resolve, reject) => {
-            this.http.get(this.BASE_URL + endpoint, {}, {}).then(data => {
-                         resolve(data.data)
+            this.http.get(this.BASE_URL + endpoint, options).toPromise().then(data => {
+                         resolve(data["_body"])
                 }).catch(error => {
                          reject(error)
                 });
@@ -35,16 +43,23 @@ BASE_URL = "https://wfa-server.herokuapp.com/"
     let options = new RequestOptions({
       headers: headers
     });
-    this.http.post(this.BASE_URL + endpoint, body, options).toPromise().then(response => 
-     this.processResponse(response), this.handleError);  
+
+    return new Promise((resolve, reject) => {
+    this.http.post(this.BASE_URL + endpoint, body, options).toPromise().then(response => {
+      resolve(JSON.stringify(response))
+    }).catch(error => {
+        reject(error)
+      })
+    }) 
   }
 
-  processResponse(response) {
-    console.log("this is the response:" + JSON.stringify(response));
-  }
+ // processResponse(response) {
+  
+ //   console.log("this is the response:" + JSON.stringify(response));
+  //}
 
-  handleError(error: Response | any) {
-    console.log(error.status);
-  }
+ // handleError(error: Response | any) {
+//    console.log(error.status);
+//  }
 
 }
