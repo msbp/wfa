@@ -65,10 +65,11 @@ export class HomePage {
 
           this.transport.post('examplePost').then((data)=>{
               console.log("here is the post: "+data)
+              
           },
           (error)=>{
             console.log("Error occurs: "+error);
-
+           
           }
         )
   }

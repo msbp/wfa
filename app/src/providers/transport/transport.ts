@@ -52,14 +52,4 @@ BASE_URL = "https://wfa-server.herokuapp.com/"
       })
     }) 
   }
-
- // processResponse(response) {
-  
- //   console.log("this is the response:" + JSON.stringify(response));
-  //}
-
- // handleError(error: Response | any) {
-//    console.log(error.status);
-//  }
-
 }
