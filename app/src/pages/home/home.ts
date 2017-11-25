@@ -1,17 +1,17 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, Platform, NavParams } from 'ionic-angular';
-import {Geolocation} from '@ionic-native/geolocation';
+import { Geolocation } from '@ionic-native/geolocation';
 import {
- GoogleMaps,
- GoogleMap,
- GoogleMapsEvent,
- GoogleMapOptions,
- CameraPosition,
- MarkerOptions,
- Marker
- } from '@ionic-native/google-maps';
+  GoogleMaps,
+  GoogleMap,
+  GoogleMapsEvent,
+  GoogleMapOptions,
+  CameraPosition,
+  MarkerOptions,
+  Marker
+} from '@ionic-native/google-maps';
 
-import {TransportProvider} from '../../providers/transport/transport'
+import { TransportProvider } from '../../providers/transport/transport'
 
 declare var google;
 
@@ -19,14 +19,14 @@ declare var google;
   selector: 'home-page',
   templateUrl: 'home.html',
   providers: [TransportProvider]
-  })
+})
 
 export class HomePage {
-  
+
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  latitude : any;
-  longitude : any;
+  latitude: any;
+  longitude: any;
 
 
 
@@ -34,33 +34,41 @@ export class HomePage {
   }
 
 
-  ionViewDidLoad(){
-        this.initializeMap();
+  ionViewDidLoad() {
+    this.initializeMap();
   }
 
- initializeMap() {    
-       this.platform.ready().then(() => {
-        let minZoomLevel = 5;
-        let mapOptions = {
-           zoom: minZoomLevel,
-           center: new google.maps.LatLng(38.50, -90.50),
-           mapTypeId: google.maps.MapTypeId.TERRIAN
-        }
-        this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-               var position = new google.maps.LatLng("48.4283", "123.3649");
-               var dogwalkMarker = new google.maps.Marker({position: position, title: "Testing"});
-               dogwalkMarker.setMap(this.map);
-           });
+  initializeMap() {
+    this.platform.ready().then(() => {
+      let minZoomLevel = 5;
+      let mapOptions = {
+        zoom: minZoomLevel,
+        center: new google.maps.LatLng(38.50, -90.50),
+        mapTypeId: google.maps.MapTypeId.TERRIAN
+      }
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      var position = new google.maps.LatLng("48.4283", "123.3649");
+      var dogwalkMarker = new google.maps.Marker({ position: position, title: "Testing" });
+      dogwalkMarker.setMap(this.map);
+    });
 
-   } 
- 
-  sampleHttpRequest(){ 
+  }
 
-    //         this.transport.get('tree').then((data => {
-    //          console.log("here is the model: " + data)
-    //  }));
+  sampleHttpRequest() {
+    let body = {}
 
-          this.transport.post('examplePost')
-  
+    this.transport.get('tree').then((data) => {
+      console.log("here is the model: " + data)
+    },
+      (error) => {
+        console.log("Error occur: " + error);
+      })
+
+    this.transport.post('examplePost', body).then((data) => {
+      console.log("here is the post: " + data)
+    },
+      (error) => {
+        console.log("Error occurs: " + error);
+      })
   }
 }
