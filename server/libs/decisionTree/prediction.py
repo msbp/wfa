@@ -13,7 +13,7 @@ class Prediction():
         balance_data = pd.read_csv('/app/server/libs/decisionTree/uuu.csv',sep= ',', header= None)
 
         X= balance_data.values[:,0:3]
-        Y= balance_data.values[:,5]
+        Y= balance_data.values[:,3]
         X_train, X_test, y_train, y_test = train_test_split( X, Y, test_size = 0.3, random_state = 100)
 
         clf_gini = DecisionTreeClassifier(criterion = "gini", random_state = 100,
