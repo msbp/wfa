@@ -12,8 +12,8 @@ class Prediction():
     def predict(self, year, lat, lon):
         balance_data = pd.read_csv('/app/server/libs/decisionTree/uuu.csv',sep= ',', header= None)
 
-        X= balance_data.values[:,0:6]
-        Y= balance_data.values[:,7]
+        X= balance_data.values[:,0:3]
+        Y= balance_data.values[:,5]
         X_train, X_test, y_train, y_test = train_test_split( X, Y, test_size = 0.3, random_state = 100)
 
         clf_gini = DecisionTreeClassifier(criterion = "gini", random_state = 100,
@@ -24,7 +24,7 @@ class Prediction():
          max_depth=3, min_samples_leaf=5)
         clf_entropy.fit(X_train, y_train)
 
-        value = clf_gini.predict([[year,2453404,33,9, lat, lon]])
+        value = clf_gini.predict([[year, lat, lon]])
         
 
         return value
