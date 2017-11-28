@@ -23,9 +23,9 @@ class Prediction():
         clf_entropy = DecisionTreeClassifier(criterion = "entropy", random_state = 100,
          max_depth=3, min_samples_leaf=5)
         clf_entropy.fit(X_train, y_train)
-        print(year)
-        print(lat)
-        print(lon)
+        print year
+        print lat
+        print lon
         value = clf_gini.predict([[int(year), int(lat), int(lon)]])
         
 
