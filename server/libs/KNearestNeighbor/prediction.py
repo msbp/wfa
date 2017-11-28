@@ -4,7 +4,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 class Prediction():
-    def predict(self, day, cause_of_fire, lat, lon, state):
+    def predict(day, cause_of_fire, lat, lon, state):
         data = pd.read_csv("/app/server/libs/KNearestNeighbor/Fires.csv", sep = ",", header=None)
         X = data.values[:, (1,2,4,5,6)]
         y = data.values[:, 3]
@@ -29,7 +29,9 @@ class Prediction():
         # Split Data
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 100)
 
-        #Create, train and predict classifier
+        ######################################
+        # Create, train and predict classifier
+        ######################################
         knn = KNeighborsClassifier(n_neighbors = 5) # 5 is a compromise between time and accuracy
         knn.fit(X_train, y_train)
         size_of_fire = knn.predict([[int(day), int(cause_of_fire), int(lat), int(lon), int(state)]])
