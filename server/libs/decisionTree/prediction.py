@@ -27,6 +27,7 @@ class Prediction():
         print lat
         print lon
         value = clf_gini.predict([[int(year), int(lat), int(lon)]])
+        print value
         
 
         return value
