@@ -24,7 +24,7 @@ class Prediction():
          max_depth=3, min_samples_leaf=5)
         clf_entropy.fit(X_train, y_train)
 
-        value = clf_gini.predict([[2005, 40, -82]])
+        value = clf_gini.predict([[int(year), int(lat), int(lon)]])
         
 
         return value
