@@ -10,7 +10,7 @@ class Prediction():
     
 
     def predict(self, year, lat, lon):
-        balance_data = pd.read_csv('/app/server/libs/decisionTree/uuu.csv',sep= ',', header= None)
+        balance_data = pd.read_csv('/app/server/libs/decisionTree/new.csv',sep= ',', header= None)
 
         X= balance_data.values[:,0:3]
         Y= balance_data.values[:,3]
