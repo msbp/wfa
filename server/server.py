@@ -19,7 +19,7 @@ def test():
 def tree():
     x = decisiontree.DecisionTree()
     mytree = x.createDecisionTreeModel()
-    
+
     return str(mytree)
 
 @app.route("/examplePost", methods=['POST'])
